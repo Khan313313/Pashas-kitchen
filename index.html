@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pasha's Kitchen | Fine Dining & Grill — DHA Phase 8, Lahore</title>
+<meta name="description" content="Pasha's Kitchen — authentic desi food, BBQ, burgers. 164/1 C-Block, Phase 8 Commercial, DHA Lahore. Order: 0320 0534 000"/>
+<meta name="robots" content="index, follow"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Pasha's Kitchen","address":{"@type":"PostalAddress","streetAddress":"164/1 C-Block, Phase 8 Commercial","addressLocality":"DHA Lahore","addressCountry":"PK"},"telephone":"03200534000","servesCuisine":["Pakistani","BBQ","Fast Food"],"priceRange":"PKR 60-699"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@200;300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{font-family:'Montserrat',sans-serif;background:#030202;color:#e8d5a0;overflow-x:hidden;cursor:none;}
+
+:root{
+  --gold:#c8973a;--gold2:#e8c060;--gold3:#f5d888;
+  --glow:rgba(200,151,58,0.4);
+  --dark:#030202;--dark2:#0a0806;--dark3:#120e08;
+  --text:#e8d5a0;--dim:rgba(232,213,160,0.5);
+}
+
+/* ══ CURSOR ══ */
+#cur{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);box-shadow:0 0 10px var(--gold),0 0 20px var(--glow);transition:transform 0.1s;}
+#cur-outer{position:fixed;width:36px;height:36px;border:1px solid rgba(200,151,58,0.4);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.34,1.56,.64,1),height .3s,border-color .3s;}
+#cur-dot{position:fixed;width:2px;height:2px;background:var(--gold3);border-radius:50%;pointer-events:none;z-index:99997;transform:translate(-50%,-50%);}
+
+/* ══ CANVAS PARTICLES ══ */
+#particles{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0.6;}
+
+/* ══ SCANLINE ══ */
+.scanline{position:fixed;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,151,58,0.3),transparent);z-index:9998;animation:scan 10s linear infinite;opacity:0.4;}
+@keyframes scan{0%{top:0;}100%{top:100vh;}}
+
+/* ══ PRELOADER ══ */
+#preloader{
+  position:fixed;inset:0;z-index:99999;
+  background:#030202;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+  transition:opacity 1s ease, visibility 1s;
+}
+#preloader.hide{opacity:0;visibility:hidden;}
+.pre-ring-wrap{position:relative;width:100px;height:100px;display:flex;align-items:center;justify-content:center;}
+.pre-ring{position:absolute;border-radius:50%;border:1px solid transparent;}
+.pr1{width:100px;height:100px;border-top-color:var(--gold);border-right-color:var(--gold);animation:spin1 1.5s linear infinite;}
+.pr2{width:70px;height:70px;border-bottom-color:var(--gold2);border-left-color:var(--gold2);animation:spin1 1s linear infinite reverse;}
+.pr3{width:44px;height:44px;border-top-color:var(--gold3);animation:spin1 0.7s linear infinite;}
+@keyframes spin1{to{transform:rotate(360deg);}}
+.pre-center{position:absolute;font-family:'Great Vibes',cursive;font-size:1.2rem;color:var(--gold);text-shadow:0 0 20px var(--glow);}
+.pre-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:8px;color:var(--gold);text-transform:uppercase;}
+.pre-bar{width:180px;height:1px;background:rgba(200,151,58,0.15);overflow:hidden;}
+.pre-bar-fill{height:100%;width:0;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:prefill 1.8s ease forwards;}
+@keyframes prefill{to{width:100%;}}
+
+/* ══ NAV ══ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:0 6%;
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;
+  background:rgba(3,2,2,0.0);
+  transition:background 0.5s,border-color 0.5s,backdrop-filter 0.5s;
+  border-bottom:1px solid transparent;
+}
+nav.scrolled{
+  background:rgba(3,2,2,0.95);
+  backdrop-filter:blur(20px);
+  border-bottom-color:rgba(200,151,58,0.1);
+}
+.nav-brand{display:flex;flex-direction:column;align-items:flex-start;text-decoration:none;}
+.nav-brand-main{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#fff;letter-spacing:3px;line-height:1;}
+.nav-brand-sub{font-family:'Great Vibes',cursive;font-size:0.85rem;color:var(--gold);line-height:1.2;}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;font-weight:300;
+  letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,255,255,0.5);text-decoration:none;
+  transition:color 0.3s;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;right:0;
+  height:1px;background:var(--gold);
+  transform:scaleX(0);transition:transform 0.3s;
+}
+.nav-links a:hover{color:var(--gold);}
+.nav-links a:hover::after{transform:scaleX(1);}
+.nav-order{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.62rem;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--dark);
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  padding:10px 24px;text-decoration:none;
+  clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+  transition:all 0.3s;
+  box-shadow:0 0 20px var(--glow);
+}
+.nav-order:hover{box-shadow:0 0 40px var(--glow),0 0 60px rgba(200,151,58,0.2);transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{width:22px;height:1px;background:var(--gold);display:block;transition:all 0.3s;}
+
+/* ══ HERO ══ */
+#hero{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* VIDEO BG */
+.hero-video-wrap{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 60%,rgba(200,151,58,0.08),transparent 70%),
+    linear-gradient(180deg,#030202 0%,#080604 40%,#0d0a06 100%);
+}
+/* Animated food particles in bg */
+.hero-video-wrap::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 20% 30%,rgba(200,151,58,0.04),transparent 30%),
+    radial-gradient(circle at 80% 70%,rgba(200,151,58,0.04),transparent 30%);
+}
+
+/* LUXURY BORDER FRAME */
+.hero-frame{
+  position:absolute;
+  top:80px;left:30px;bottom:30px;right:30px;
+  border:1px solid rgba(200,151,58,0.08);
+  pointer-events:none;z-index:2;
+}
+.hero-frame::before{
+  content:'';position:absolute;
+  top:-1px;left:15%;right:15%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.hero-frame::after{
+  content:'';position:absolute;
+  bottom:-1px;left:15%;right:15%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+/* Corner ornaments */
+.corner{position:absolute;width:30px;height:30px;}
+.corner::before,.corner::after{content:'';position:absolute;background:var(--gold);}
+.corner::before{width:100%;height:1px;top:0;left:0;}
+.corner::after{width:1px;height:100%;top:0;left:0;}
+.c-tl{top:0;left:0;}
+.c-tr{top:0;right:0;transform:scaleX(-1);}
+.c-bl{bottom:0;left:0;transform:scaleY(-1);}
+.c-br{bottom:0;right:0;transform:scale(-1);}
+
+/* HERO CONTENT */
+.hero-content{
+  position:relative;z-index:5;
+  text-align:center;
+  padding:0 5%;
+  max-width:900px;
+}
+.hero-pre{
+  font-family:'Great Vibes',cursive;
+  font-size:1.6rem;color:var(--gold);
+  display:flex;align-items:center;justify-content:center;gap:20px;
+  margin-bottom:10px;
+  opacity:0;animation:fadeup 1s ease 0.5s forwards;
+}
+.hero-pre::before,.hero-pre::after{
+  content:'';width:60px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold));
+}
+.hero-pre::after{background:linear-gradient(90deg,var(--gold),transparent);}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.5rem,10vw,7rem);
+  font-weight:300;
+  color:#fff;
+  line-height:0.95;
+  letter-spacing:8px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+  opacity:0;animation:fadeup 1s ease 0.8s forwards;
+}
+.hero-title em{
+  font-style:italic;
+  font-weight:300;
+  color:var(--gold);
+  display:block;
+  font-size:0.6em;
+  letter-spacing:12px;
+  text-shadow:0 0 60px var(--glow);
+}
+.hero-divider{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  margin:24px auto;
+  opacity:0;animation:fadeup 1s ease 1.1s forwards;
+}
+.hero-divider::before,.hero-divider::after{
+  content:'';width:80px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(200,151,58,0.5));
+}
+.hero-divider::after{background:linear-gradient(90deg,rgba(200,151,58,0.5),transparent);}
+.hero-divider span{color:var(--gold);font-size:0.7rem;}
+.hero-desc{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-weight:300;font-style:italic;
+  color:rgba(255,255,255,0.4);
+  line-height:1.9;max-width:480px;margin:0 auto 36px;
+  opacity:0;animation:fadeup 1s ease 1.3s forwards;
+}
+.hero-btns{
+  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+  opacity:0;animation:fadeup 1s ease 1.5s forwards;
+  margin-bottom:50px;
+}
+.btn-luxury{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.62rem;font-weight:600;letter-spacing:4px;
+  text-transform:uppercase;padding:15px 36px;
+  text-decoration:none;
+  clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);
+  transition:all 0.4s;
+  box-shadow:0 0 30px var(--glow);
+}
+.btn-luxury:hover{box-shadow:0 0 60px var(--glow),0 0 100px rgba(200,151,58,0.2);transform:translateY(-2px);}
+.btn-ghost-lux{
+  border:1px solid rgba(200,151,58,0.3);
+  color:rgba(255,255,255,0.7);
+  font-family:'Montserrat',sans-serif;
+  font-size:0.62rem;font-weight:300;letter-spacing:4px;
+  text-transform:uppercase;padding:15px 36px;
+  text-decoration:none;
+  clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);
+  transition:all 0.4s;
+}
+.btn-ghost-lux:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,151,58,0.05);}
+
+/* Info pills */
+.hero-pills{
+  display:flex;gap:0;justify-content:center;flex-wrap:wrap;
+  border:1px solid rgba(200,151,58,0.1);
+  background:rgba(3,2,2,0.6);
+  backdrop-filter:blur(20px);
+  opacity:0;animation:fadeup 1s ease 1.7s forwards;
+}
+.pill{
+  padding:18px 30px;text-align:center;
+  border-right:1px solid rgba(200,151,58,0.08);
+  transition:background 0.3s;
+}
+.pill:last-child{border-right:none;}
+.pill:hover{background:rgba(200,151,58,0.04);}
+.pill-icon{font-size:1.1rem;display:block;margin-bottom:5px;}
+.pill-label{font-size:0.55rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.25);}
+.pill-val{font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--gold);margin-top:2px;}
+
+@keyframes fadeup{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ══ SCROLL INDICATOR ══ */
+.scroll-ind{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  z-index:5;opacity:0;animation:fadeup 1s ease 2s forwards;
+}
+.scroll-line{width:1px;height:50px;background:linear-gradient(180deg,transparent,var(--gold),transparent);animation:scroll-anim 2s ease-in-out infinite;}
+@keyframes scroll-anim{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+.scroll-text{font-size:0.5rem;letter-spacing:3px;color:rgba(200,151,58,0.4);text-transform:uppercase;}
+
+/* ══ ABOUT SECTION ══ */
+#about{
+  padding:120px 6%;
+  background:#030202;
+  position:relative;
+  overflow:hidden;
+}
+#about::before{
+  content:'';position:absolute;
+  right:-200px;top:50%;transform:translateY(-50%);
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(200,151,58,0.04),transparent 70%);
+  border-radius:50%;
+}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1100px;margin:0 auto;}
+.about-visual{position:relative;}
+.about-img-main{
+  width:100%;height:500px;object-fit:cover;
+  filter:brightness(0.8) sepia(0.15);
+}
+/* Gold frame */
+.about-gold-frame{
+  position:absolute;inset:-12px;
+  border:1px solid rgba(200,151,58,0.2);
+  pointer-events:none;
+}
+.about-gold-frame::before{
+  content:'';position:absolute;
+  top:-1px;left:20%;right:20%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+/* Badge */
+.about-badge{
+  position:absolute;bottom:-20px;right:-20px;
+  width:100px;height:100px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 0 30px var(--glow);
+}
+.about-badge strong{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:#000;line-height:1;}
+.about-badge small{font-size:0.45rem;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,0.7);}
+.about-script{font-family:'Great Vibes',cursive;font-size:1.3rem;color:var(--gold);margin-bottom:8px;}
+.about-title{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:#fff;line-height:1.1;margin-bottom:20px;}
+.about-title em{font-style:italic;color:var(--gold);}
+.about-text{color:var(--dim);font-size:0.88rem;line-height:2;margin-bottom:28px;font-weight:300;}
+.about-line{width:60px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:28px;}
+.about-feats{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.feat{display:flex;align-items:center;gap:14px;}
+.feat-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+.feat span{font-size:0.82rem;color:rgba(255,255,255,0.55);letter-spacing:1px;}
+.btn-about{
+  display:inline-flex;align-items:center;gap:12px;
+  border:1px solid rgba(200,151,58,0.3);
+  color:var(--gold);
+  font-family:'Montserrat',sans-serif;
+  font-size:0.62rem;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;padding:13px 28px;
+  text-decoration:none;transition:all 0.3s;
+}
+.btn-about:hover{background:rgba(200,151,58,0.08);border-color:var(--gold);}
+.btn-about::after{content:'→';font-size:0.9rem;}
+
+/* ══ MENU SECTION ══ */
+#menu{
+  padding:120px 6%;
+  background:var(--dark2);
+  position:relative;
+}
+.menu-top{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:50px;flex-wrap:wrap;gap:20px;
+}
+.menu-title-wrap .script{font-family:'Great Vibes',cursive;font-size:1.2rem;color:var(--gold);}
+.menu-title-wrap h2{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:#fff;line-height:1.05;}
+.menu-title-wrap h2 em{font-style:italic;color:var(--gold);}
+.menu-tabs-lux{display:flex;gap:0;border:1px solid rgba(200,151,58,0.12);}
+.mt{
+  padding:12px 22px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--dim);
+  background:transparent;border:none;cursor:pointer;
+  border-right:1px solid rgba(200,151,58,0.08);
+  transition:all 0.3s;
+}
+.mt:last-child{border-right:none;}
+.mt.active,.mt:hover{background:var(--gold);color:#000;}
+.menu-section{display:none;}
+.menu-section.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1px;background:rgba(200,151,58,0.06);}
+.mc{
+  background:var(--dark2);
+  padding:24px 20px;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
+  position:relative;
+  transition:background 0.3s;
+  border-bottom:1px solid rgba(200,151,58,0.04);
+}
+.mc:hover{background:rgba(200,151,58,0.04);}
+.mc::before{content:'';position:absolute;top:0;left:0;width:0;height:1px;background:var(--gold);transition:width 0.4s;}
+.mc:hover::before{width:100%;}
+.mc-l h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:4px;}
+.mc-l p{font-size:0.72rem;color:var(--dim);line-height:1.5;font-weight:300;}
+.mc-price{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--gold);white-space:nowrap;}
+
+/* ══ SPECIALS ══ */
+#specials{padding:120px 6%;background:var(--dark);}
+.spec-head{text-align:center;margin-bottom:60px;}
+.spec-head .script{font-family:'Great Vibes',cursive;font-size:1.3rem;color:var(--gold);}
+.spec-head h2{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:#fff;}
+.spec-head h2 em{font-style:italic;color:var(--gold);}
+.spec-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:3px;max-width:1100px;margin:0 auto;}
+.spec-card{position:relative;overflow:hidden;cursor:pointer;}
+.spec-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(.4,0,.2,1),filter 0.5s;filter:brightness(0.7) sepia(0.1);}
+.spec-card:hover img{transform:scale(1.08);filter:brightness(0.9) sepia(0);}
+.spec-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(3,2,2,0.95) 0%,rgba(3,2,2,0.2) 50%,transparent 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:28px;
+  transition:background 0.4s;
+}
+.spec-card:hover .spec-overlay{background:linear-gradient(to top,rgba(3,2,2,0.98) 0%,rgba(3,2,2,0.4) 60%,transparent 100%);}
+.spec-tag{font-family:'Great Vibes',cursive;font-size:1rem;color:var(--gold);margin-bottom:4px;}
+.spec-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:#fff;}
+.spec-price{font-size:0.78rem;color:rgba(200,151,58,0.7);margin-top:4px;font-weight:300;letter-spacing:1px;}
+.sc-big{height:560px;}
+.sc-right{display:grid;grid-template-rows:1fr 1fr;gap:3px;}
+.sc-sm{height:278px;}
+/* Gold border on hover */
+.spec-card::after{
+  content:'';position:absolute;inset:0;
+  border:1px solid transparent;
+  transition:border-color 0.4s;
+  pointer-events:none;
+}
+.spec-card:hover::after{border-color:rgba(200,151,58,0.3);}
+
+/* ══ ORDER ══ */
+#order{
+  padding:120px 6%;
+  background:var(--dark2);
+  position:relative;
+}
+#order::before{
+  content:'';position:absolute;left:-200px;top:50%;transform:translateY(-50%);
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(200,151,58,0.03),transparent 70%);
+  border-radius:50%;
+}
+.order-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.order-left .script{font-family:'Great Vibes',cursive;font-size:1.3rem;color:var(--gold);}
+.order-left h2{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:#fff;line-height:1.1;margin-bottom:16px;}
+.order-left h2 em{font-style:italic;color:var(--gold);}
+.order-left p{color:var(--dim);font-size:0.85rem;line-height:2;margin-bottom:36px;font-weight:300;}
+.order-methods{display:flex;flex-direction:column;gap:12px;}
+.om{
+  display:flex;align-items:center;gap:16px;
+  border:1px solid rgba(200,151,58,0.1);
+  padding:18px 20px;text-decoration:none;
+  background:rgba(200,151,58,0.02);
+  transition:all 0.3s;position:relative;overflow:hidden;
+}
+.om::before{content:'';position:absolute;inset:0;background:rgba(200,151,58,0.04);transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+.om:hover::before{transform:scaleX(1);}
+.om:hover{border-color:rgba(200,151,58,0.35);}
+.om-icon{
+  width:46px;height:46px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+  clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+}
+.om-title{font-family:'Montserrat',sans-serif;font-size:0.62rem;font-weight:600;color:#fff;letter-spacing:2px;text-transform:uppercase;}
+.om-val{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);margin-top:2px;}
+.order-right{
+  border:1px solid rgba(200,151,58,0.1);
+  padding:40px;
+  background:rgba(200,151,58,0.02);
+  position:relative;
+}
+.order-right::before{
+  content:'';position:absolute;
+  top:0;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.map-visual{
+  width:100%;height:220px;
+  background:linear-gradient(135deg,rgba(200,151,58,0.06),rgba(3,2,2,0.8));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  border:1px solid rgba(200,151,58,0.08);margin-bottom:20px;
+  position:relative;overflow:hidden;
+}
+.map-visual::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%,rgba(200,151,58,0.06),transparent 60%);
+}
+.map-visual p{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);position:relative;}
+.map-visual small{font-size:0.75rem;color:rgba(255,255,255,0.3);text-align:center;line-height:1.7;position:relative;font-weight:300;}
+.map-btn{
+  display:block;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;padding:14px 20px;
+  text-decoration:none;text-align:center;
+  transition:all 0.3s;
+  clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+  box-shadow:0 0 20px var(--glow);
+}
+.map-btn:hover{box-shadow:0 0 40px var(--glow);}
+
+/* ══ FOOTER ══ */
+footer{
+  background:#020101;
+  border-top:1px solid rgba(200,151,58,0.08);
+  padding:60px 6% 30px;
+}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:50px;margin-bottom:50px;
+}
+.fb-brand h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff;}
+.fb-brand span{font-family:'Great Vibes',cursive;color:var(--gold);font-size:0.9rem;}
+.fb-brand p{color:rgba(255,255,255,0.25);font-size:0.78rem;line-height:1.9;margin-top:14px;font-weight:300;}
+.fb-col h4{font-family:'Montserrat',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.fb-col a,.fb-col p{display:block;color:rgba(255,255,255,0.25);font-size:0.8rem;text-decoration:none;margin-bottom:8px;line-height:1.7;font-weight:300;transition:color 0.3s;}
+.fb-col a:hover{color:var(--gold);}
+.footer-bottom{
+  border-top:1px solid rgba(200,151,58,0.06);
+  padding-top:24px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;
+}
+.fcopy{font-size:0.65rem;color:rgba(255,255,255,0.15);font-weight:300;letter-spacing:2px;}
+.fsocial{display:flex;gap:10px;}
+.fsoc{
+  width:36px;height:36px;
+  border:1px solid rgba(200,151,58,0.15);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.25);text-decoration:none;
+  font-size:0.65rem;font-weight:600;font-family:'Montserrat',sans-serif;
+  transition:all 0.3s;
+}
+.fsoc:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,151,58,0.06);}
+.footer-gold-line{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-bottom:40px;}
+
+
+/* FOOD ILLUSTRATIONS */
+.food-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.food-karahi{background:radial-gradient(ellipse at 40% 40%,#8B2500,#3d0f00);} 
+.food-biryani{background:radial-gradient(ellipse at 40% 40%,#8B6914,#3d2800);}
+.food-bbq{background:radial-gradient(ellipse at 40% 40%,#5a1a00,#1a0800);}
+.food-burger{background:radial-gradient(ellipse at 40% 40%,#6b3300,#2a1000);}
+.food-firni{background:radial-gradient(ellipse at 40% 40%,#8B7355,#4a3520);}
+.food-daal{background:radial-gradient(ellipse at 40% 40%,#7a5a00,#3d2800);}
+.food-restaurant{background:radial-gradient(ellipse at 40% 40%,#2a1508,#0d0603);}
+.food-emoji{font-size:5rem;filter:drop-shadow(0 4px 20px rgba(0,0,0,0.5));animation:float-food 3s ease-in-out infinite;}
+@keyframes float-food{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.food-plate{position:absolute;bottom:10%;left:50%;transform:translateX(-50%);width:80%;height:12px;background:radial-gradient(ellipse,rgba(0,0,0,0.4),transparent);border-radius:50%;filter:blur(4px);}
+.food-steam{position:absolute;top:15%;left:50%;transform:translateX(-50%);}
+.steam-line{width:3px;height:20px;background:linear-gradient(to top,rgba(255,255,255,0.3),transparent);border-radius:3px;display:inline-block;margin:0 4px;animation:steam 2s ease-in-out infinite;}
+.steam-line:nth-child(2){animation-delay:0.3s;height:14px;}
+.steam-line:nth-child(3){animation-delay:0.6s;height:18px;}
+@keyframes steam{0%,100%{transform:translateY(0) scaleX(1);opacity:0.6;}50%{transform:translateY(-10px) scaleX(1.3);opacity:0;}}
+
+/* WA FLOAT */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:500;
+  width:54px;height:54px;background:#25d366;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;text-decoration:none;
+  box-shadow:0 4px 20px rgba(37,211,102,0.35);
+  animation:wapulse 3s infinite;transition:transform 0.3s;
+}
+.wa-float:hover{transform:scale(1.1);}
+@keyframes wapulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.35);}50%{box-shadow:0 4px 40px rgba(37,211,102,0.6),0 0 0 8px rgba(37,211,102,0.08);}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.rd1{transition-delay:.15s;}.rd2{transition-delay:.3s;}.rd3{transition-delay:.45s;}
+
+/* MOBILE */
+@media(max-width:960px){
+  .nav-links{display:none;}.hamburger{display:flex;}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;inset:72px 0 0;background:rgba(3,2,2,0.98);padding:30px 6%;z-index:999;border-top:1px solid rgba(200,151,58,0.1);}
+  .nav-links.open li{border-bottom:1px solid rgba(200,151,58,0.06);}
+  .nav-links.open a{display:block;padding:16px 0;}
+  .about-grid,.order-inner,.footer-top{grid-template-columns:1fr;}
+  .about-visual{height:360px;}
+  .spec-grid{grid-template-columns:1fr;}
+  .sc-big{height:300px;}
+  .sc-right{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .sc-sm{height:200px;}
+  #cur,#cur-outer,#cur-dot{display:none;}body{cursor:auto;}
+  .hero-frame{display:none;}
+}
+@media(max-width:600px){
+  #about,#menu,#specials,#order{padding:80px 5%;}
+  .hero-title{font-size:2.8rem;letter-spacing:4px;}
+  .menu-tabs-lux{flex-wrap:wrap;}
+  .mt{padding:10px 14px;font-size:0.55rem;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pre-ring-wrap">
+    <div class="pre-ring pr1"></div>
+    <div class="pre-ring pr2"></div>
+    <div class="pre-ring pr3"></div>
+    <div class="pre-center">P</div>
+  </div>
+  <div class="pre-text">Pasha's Kitchen</div>
+  <div class="pre-bar"><div class="pre-bar-fill"></div></div>
+</div>
+
+<div id="particlesCanvas"></div>
+<div class="scanline"></div>
+<div id="cur"></div>
+<div id="cur-outer"></div>
+<div id="cur-dot"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-brand" href="#">
+    <span class="nav-brand-main">PASHA'S</span>
+    <span class="nav-brand-sub">Kitchen</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#specials">Specials</a></li>
+    <li><a href="#order">Reserve</a></li>
+  </ul>
+  <a class="nav-order" href="tel:03200534000">Order Now</a>
+  <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-video-wrap"></div>
+  <div class="hero-frame">
+    <div class="corner c-tl"></div>
+    <div class="corner c-tr"></div>
+    <div class="corner c-bl"></div>
+    <div class="corner c-br"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-pre">Welcome To</div>
+    <h1 class="hero-title">PASHA'S<em>Kitchen</em></h1>
+    <div class="hero-divider"><span>✦</span></div>
+    <p class="hero-desc">Where authentic Pakistani flavors meet fine dining elegance — sizzling BBQ, gourmet burgers & time-honored desi recipes, crafted with love in DHA Phase 8, Lahore.</p>
+    <div class="hero-btns">
+      <a class="btn-luxury" href="#menu">Explore Menu</a>
+      <a class="btn-ghost-lux" href="#order">Order Now</a>
+    </div>
+    <div class="hero-pills">
+      <div class="pill"><span class="pill-icon">📍</span><div class="pill-label">Location</div><div class="pill-val">DHA Phase 8</div></div>
+      <div class="pill"><span class="pill-icon">📞</span><div class="pill-label">Order</div><div class="pill-val">0320 0534 000</div></div>
+      <div class="pill"><span class="pill-icon">🕐</span><div class="pill-label">Hours</div><div class="pill-val">11AM — 12AM</div></div>
+      <div class="pill"><span class="pill-icon">🛵</span><div class="pill-label">Delivery</div><div class="pill-val">Available</div></div>
+    </div>
+  </div>
+  <div class="scroll-ind">
+    <div class="scroll-line"></div>
+    <div class="scroll-text">Scroll</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal">
+      <div class="food-img food-restaurant" aria-label="Restaurant Atmosphere">
+      <div class="food-steam"><span class="steam-line"></span><span class="steam-line"></span><span class="steam-line"></span></div>
+      <div class="food-emoji">🍽️</div>
+      <div class="food-plate"></div>
+    </div>
+      <div class="about-gold-frame"></div>
+      <div class="about-badge"><strong>❤️</strong><small>Fresh Daily</small></div>
+    </div>
+    <div class="reveal rd1">
+      <div class="about-script">The Best Food for you</div>
+      <h2 class="about-title">Authentic Flavors,<br/><em>Crafted With Passion</em></h2>
+      <div class="about-line"></div>
+      <p class="about-text">At Pasha's Kitchen, every dish tells a story — of tradition, of care, of flavors passed down through generations. From our signature chicken karahi to sizzling BBQ platters and gourmet burgers, we bring you the true taste of Pakistan at DHA Phase 8, Lahore.</p>
+      <div class="about-feats">
+        <div class="feat"><div class="feat-dot"></div><span>Fresh ingredients sourced daily</span></div>
+        <div class="feat"><div class="feat-dot"></div><span>Authentic desi recipes — time-honored & true</span></div>
+        <div class="feat"><div class="feat-dot"></div><span>Gourmet burgers with premium sauces</span></div>
+        <div class="feat"><div class="feat-dot"></div><span>Fast delivery across DHA Lahore</span></div>
+        <div class="feat"><div class="feat-dot"></div><span>Affordable dining — PKR 60 to 699</span></div>
+      </div>
+      <a class="btn-about" href="#menu">Explore Our Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="menu-top reveal">
+    <div class="menu-title-wrap">
+      <div class="script">Our Menu</div>
+      <h2>Finest <em>Selections</em></h2>
+    </div>
+    <div class="menu-tabs-lux">
+      <button class="mt active" onclick="showMenu('chicken',this)">Chicken</button>
+      <button class="mt" onclick="showMenu('beef',this)">Beef</button>
+      <button class="mt" onclick="showMenu('bbq',this)">BBQ</button>
+      <button class="mt" onclick="showMenu('burgers',this)">Burgers</button>
+      <button class="mt" onclick="showMenu('daal',this)">Daal & Veg</button>
+      <button class="mt" onclick="showMenu('sweets',this)">Sweets</button>
+    </div>
+  </div>
+  <div class="reveal rd1">
+    <div class="menu-section active" id="menu-chicken">
+      <div class="mc"><div class="mc-l"><h3>Chicken Karahi</h3><p>Classic wok-cooked in rich tomato gravy</p></div><div class="mc-price">PKR 320</div></div>
+      <div class="mc"><div class="mc-l"><h3>Chicken Qorma</h3><p>Slow-cooked in aromatic spiced gravy</p></div><div class="mc-price">PKR 320</div></div>
+      <div class="mc"><div class="mc-l"><h3>Chicken Jalferazi</h3><p>Stir-fried with peppers & onions</p></div><div class="mc-price">PKR 350</div></div>
+      <div class="mc"><div class="mc-l"><h3>Chicken Boneless</h3><p>Tender boneless in signature sauce</p></div><div class="mc-price">PKR 350</div></div>
+      <div class="mc"><div class="mc-l"><h3>Chicken Biryani</h3><p>Fragrant basmati with spiced chicken</p></div><div class="mc-price">PKR 350</div></div>
+      <div class="mc"><div class="mc-l"><h3>Chicken Palao + Shami</h3><p>Aromatic palao with shami kabab</p></div><div class="mc-price">PKR 350</div></div>
+    </div>
+    <div class="menu-section" id="menu-beef">
+      <div class="mc"><div class="mc-l"><h3>Beef Karahi</h3><p>Sizzling beef in traditional karahi masala</p></div><div class="mc-price">PKR 350</div></div>
+      <div class="mc"><div class="mc-l"><h3>Beef Aloo Qeema</h3><p>Minced beef with potatoes & spices</p></div><div class="mc-price">PKR 300</div></div>
+    </div>
+    <div class="menu-section" id="menu-bbq">
+      <div class="mc"><div class="mc-l"><h3>Seekh Kabab</h3><p>Juicy minced meat from the grill — 1 pc</p></div><div class="mc-price">PKR 150</div></div>
+      <div class="mc"><div class="mc-l"><h3>Malai Boti</h3><p>Creamy marinated chicken boti — 5 pcs</p></div><div class="mc-price">PKR 300</div></div>
+      <div class="mc"><div class="mc-l"><h3>1/4 Chicken Grilled</h3><p>Quarter chicken grilled to perfection</p></div><div class="mc-price">PKR 300</div></div>
+    </div>
+    <div class="menu-section" id="menu-burgers">
+      <div class="mc"><div class="mc-l"><h3>Beef Grilled Burger</h3><p>Buffalo Cream Sauce + Fries</p></div><div class="mc-price">PKR 699</div></div>
+      <div class="mc"><div class="mc-l"><h3>Beef Grilled Burger</h3><p>Tangi Sauce + Fries</p></div><div class="mc-price">PKR 699</div></div>
+      <div class="mc"><div class="mc-l"><h3>Chicken Grilled Burger</h3><p>Buffalo Cream Sauce + Fries</p></div><div class="mc-price">PKR 649</div></div>
+      <div class="mc"><div class="mc-l"><h3>Chicken Grilled Burger</h3><p>Tangi Sauce + Fries</p></div><div class="mc-price">PKR 649</div></div>
+      <div class="mc"><div class="mc-l"><h3>Chicken Paty Burger</h3><p>Classic chicken patty</p></div><div class="mc-price">PKR 449</div></div>
+      <div class="mc"><div class="mc-l"><h3>Zinger Wrap</h3><p>Crispy zinger in soft tortilla</p></div><div class="mc-price">PKR 449</div></div>
+      <div class="mc"><div class="mc-l"><h3>Grill Wrap</h3><p>Grilled chicken with veggies</p></div><div class="mc-price">PKR 449</div></div>
+      <div class="mc"><div class="mc-l"><h3>Zinger Burger</h3><p>Crispy zinger — classic</p></div><div class="mc-price">PKR 549</div></div>
+      <div class="mc"><div class="mc-l"><h3>Anda Shami Burger</h3><p>Egg & shami kabab burger</p></div><div class="mc-price">PKR 299</div></div>
+      <div class="mc"><div class="mc-l"><h3>Grill Chicken Sandwich</h3><p>Grilled chicken with sauce</p></div><div class="mc-price">PKR 499</div></div>
+      <div class="mc"><div class="mc-l"><h3>Loaded Fries</h3><p>Crispy fries with toppings</p></div><div class="mc-price">PKR 399</div></div>
+    </div>
+    <div class="menu-section" id="menu-daal">
+      <div class="mc"><div class="mc-l"><h3>Daal Channa Fried</h3><p>Fried channa with desi tadka</p></div><div class="mc-price">PKR 200</div></div>
+      <div class="mc"><div class="mc-l"><h3>Daal Mash</h3><p>Slow-cooked mash with butter</p></div><div class="mc-price">PKR 250</div></div>
+      <div class="mc"><div class="mc-l"><h3>Mix Daal</h3><p>Mixed lentils in aromatic spices</p></div><div class="mc-price">PKR 200</div></div>
+      <div class="mc"><div class="mc-l"><h3>Kari Pakora</h3><p>Golden pakoras in tangy kari</p></div><div class="mc-price">PKR 250</div></div>
+      <div class="mc"><div class="mc-l"><h3>White Rice + Daal Shami</h3><p>Rice with daal & shami</p></div><div class="mc-price">PKR 260</div></div>
+      <div class="mc"><div class="mc-l"><h3>Chinese Gravy + Egg Fried Rice</h3><p>Chinese style with fried rice</p></div><div class="mc-price">PKR 550</div></div>
+      <div class="mc"><div class="mc-l"><h3>Vegetable of the Day</h3><p>Fresh seasonal dish</p></div><div class="mc-price">PKR 220</div></div>
+      <div class="mc"><div class="mc-l"><h3>Alu Anda Bhujia</h3><p>Potato & egg bhujia</p></div><div class="mc-price">PKR 220</div></div>
+      <div class="mc"><div class="mc-l"><h3>Roti</h3><p>Fresh tandoor roti</p></div><div class="mc-price">PKR 15</div></div>
+      <div class="mc"><div class="mc-l"><h3>Naan</h3><p>Soft butter naan</p></div><div class="mc-price">PKR 50</div></div>
+    </div>
+    <div class="menu-section" id="menu-sweets">
+      <div class="mc"><div class="mc-l"><h3>Gurr Rice</h3><p>Traditional jaggery rice dessert</p></div><div class="mc-price">PKR 100</div></div>
+      <div class="mc"><div class="mc-l"><h3>Firni</h3><p>Creamy rice pudding with cardamom</p></div><div class="mc-price">PKR 100</div></div>
+      <div class="mc"><div class="mc-l"><h3>Ras Gulla</h3><p>Cheese balls in syrup — 1 pc</p></div><div class="mc-price">PKR 60</div></div>
+      <div class="mc"><div class="mc-l"><h3>Zarda</h3><p>Sweet saffron rice with dry fruits</p></div><div class="mc-price">PKR 100</div></div>
+      <div class="mc"><div class="mc-l"><h3>Raita</h3><p>Fresh yogurt with spices</p></div><div class="mc-price">PKR 60</div></div>
+      <div class="mc"><div class="mc-l"><h3>Tea</h3><p>Desi chai freshly brewed</p></div><div class="mc-price">PKR 80</div></div>
+      <div class="mc"><div class="mc-l"><h3>Cold Drink 250ml</h3><p>Chilled beverage</p></div><div class="mc-price">PKR 100</div></div>
+      <div class="mc"><div class="mc-l"><h3>Water Bottle</h3><p>Fresh mineral water</p></div><div class="mc-price">PKR 80</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALS -->
+<section id="specials">
+  <div class="spec-head reveal">
+    <div class="script">Chef's Selection</div>
+    <h2>Tonight's <em>Specials</em></h2>
+  </div>
+  <div class="spec-grid reveal rd1">
+    <div class="spec-card sc-big">
+      <div class="food-img food-karahi" aria-label="Chicken Karahi">
+      <div class="food-steam"><span class="steam-line"></span><span class="steam-line"></span><span class="steam-line"></span></div>
+      <div class="food-emoji">🫕</div>
+      <div class="food-plate"></div>
+    </div>
+      <div class="spec-overlay">
+        <div class="spec-tag">Signature Dish</div>
+        <div class="spec-title">Chicken Karahi</div>
+        <div class="spec-price">PKR 320 — Rich, Aromatic & Authentic</div>
+      </div>
+    </div>
+    <div class="sc-right">
+      <div class="spec-card sc-sm">
+        <div class="food-img food-burger" aria-label="Beef Burger">
+      <div class="food-steam"><span class="steam-line"></span><span class="steam-line"></span><span class="steam-line"></span></div>
+      <div class="food-emoji">🍔</div>
+      <div class="food-plate"></div>
+    </div>
+        <div class="spec-overlay">
+          <div class="spec-tag">Fan Favourite</div>
+          <div class="spec-title">Beef Grilled Burger</div>
+          <div class="spec-price">PKR 699 with Fries</div>
+        </div>
+      </div>
+      <div class="spec-card sc-sm">
+        <div class="food-img food-bbq" aria-label="BBQ Platter">
+      <div class="food-steam"><span class="steam-line"></span><span class="steam-line"></span><span class="steam-line"></span></div>
+      <div class="food-emoji">🍢</div>
+      <div class="food-plate"></div>
+    </div>
+        <div class="spec-overlay">
+          <div class="spec-tag">From the Grill</div>
+          <div class="spec-title">Malai Boti BBQ</div>
+          <div class="spec-price">PKR 300 — 5 pieces</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+  <div class="order-inner">
+    <div class="reveal">
+      <div class="script">Reserve Your Table</div>
+      <h2>Order Now,<br/><em>Eat Happy</em></h2>
+      <p>Call us, WhatsApp us, or visit us directly. We deliver fresh, hot food across DHA Phase 8 and surrounding areas — always fast, always delicious.</p>
+      <div class="order-methods">
+        <a class="om" href="tel:03200534000"><div class="om-icon">📞</div><div><div class="om-title">Call to Order</div><div class="om-val">0320 0534 000</div></div></a>
+        <a class="om" href="https://wa.me/923200534000" target="_blank"><div class="om-icon">💬</div><div><div class="om-title">WhatsApp</div><div class="om-val">Message Us Now</div></div></a>
+        <div class="om"><div class="om-icon">📍</div><div><div class="om-title">Visit Us</div><div class="om-val">164/1 C-Block, Phase 8 Commercial, DHA Lahore</div></div></div>
+      </div>
+    </div>
+    <div class="order-right reveal rd1">
+      <div class="map-visual">
+        <span style="font-size:2rem;">📍</span>
+        <p>Pasha's Kitchen</p>
+        <small>164/1 C-Block, Phase 8 Commercial<br/>DHA Lahore · Open 11AM–12AM</small>
+      </div>
+      <a class="map-btn" href="https://maps.google.com/?q=DHA+Phase+8+Commercial+Lahore" target="_blank">Open in Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<!-- FOOD GALLERY -->
+<section id="gallery" style="padding:100px 6%;background:#030202;">
+  <div style="text-align:center;margin-bottom:60px;" class="reveal">
+    <div style="font-family:'Great Vibes',cursive;font-size:1.3rem;color:var(--gold);margin-bottom:8px;">A Taste of Pasha's</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:#fff;">Our <em style="font-style:italic;color:var(--gold);">Food Gallery</em></h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px;max-width:1100px;margin:0 auto;" class="reveal rd1">
+
+    <!-- Karahi -->
+    <div style="position:relative;overflow:hidden;height:300px;cursor:pointer;" class="gal-card">
+      <div class="food-img food-karahi" aria-label="Chicken Karahi">
+      <div class="food-steam"><span class="steam-line"></span><span class="steam-line"></span><span class="steam-line"></span></div>
+      <div class="food-emoji">🫕</div>
+      <div class="food-plate"></div>
+    </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(3,2,2,0.9),transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;">
+        <div style="font-family:'Great Vibes',cursive;font-size:1rem;color:var(--gold);">Signature</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#fff;font-weight:600;">Chicken Karahi</div>
+        <div style="font-size:0.72rem;color:rgba(200,151,58,0.7);margin-top:4px;">PKR 320</div>
+      </div>
+    </div>
+
+    <!-- Biryani -->
+    <div style="position:relative;overflow:hidden;height:300px;cursor:pointer;" class="gal-card">
+      <div class="food-img food-biryani" aria-label="Chicken Biryani">
+      <div class="food-steam"><span class="steam-line"></span><span class="steam-line"></span><span class="steam-line"></span></div>
+      <div class="food-emoji">🍛</div>
+      <div class="food-plate"></div>
+    </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(3,2,2,0.9),transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;">
+        <div style="font-family:'Great Vibes',cursive;font-size:1rem;color:var(--gold);">Classic</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#fff;font-weight:600;">Chicken Biryani</div>
+        <div style="font-size:0.72rem;color:rgba(200,151,58,0.7);margin-top:4px;">PKR 350</div>
+      </div>
+    </div>
+
+    <!-- BBQ -->
+    <div style="position:relative;overflow:hidden;height:300px;cursor:pointer;" class="gal-card">
+      <div class="food-img food-bbq" aria-label="BBQ Platter">
+      <div class="food-steam"><span class="steam-line"></span><span class="steam-line"></span><span class="steam-line"></span></div>
+      <div class="food-emoji">🍢</div>
+      <div class="food-plate"></div>
+    </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(3,2,2,0.9),transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;">
+        <div style="font-family:'Great Vibes',cursive;font-size:1rem;color:var(--gold);">From the Grill</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#fff;font-weight:600;">Malai Boti BBQ</div>
+        <div style="font-size:0.72rem;color:rgba(200,151,58,0.7);margin-top:4px;">PKR 300 — 5 pcs</div>
+      </div>
+    </div>
+
+    <!-- Burger -->
+    <div style="position:relative;overflow:hidden;height:300px;cursor:pointer;" class="gal-card">
+      <div class="food-img food-burger" aria-label="Beef Burger">
+      <div class="food-steam"><span class="steam-line"></span><span class="steam-line"></span><span class="steam-line"></span></div>
+      <div class="food-emoji">🍔</div>
+      <div class="food-plate"></div>
+    </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(3,2,2,0.9),transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;">
+        <div style="font-family:'Great Vibes',cursive;font-size:1rem;color:var(--gold);">Fan Favourite</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#fff;font-weight:600;">Beef Grilled Burger</div>
+        <div style="font-size:0.72rem;color:rgba(200,151,58,0.7);margin-top:4px;">PKR 699 with Fries</div>
+      </div>
+    </div>
+
+    <!-- Firni / Dessert -->
+    <div style="position:relative;overflow:hidden;height:300px;cursor:pointer;" class="gal-card">
+      <div class="food-img food-firni" aria-label="Firni Dessert">
+      <div class="food-steam"><span class="steam-line"></span><span class="steam-line"></span><span class="steam-line"></span></div>
+      <div class="food-emoji">🍮</div>
+      <div class="food-plate"></div>
+    </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(3,2,2,0.9),transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;">
+        <div style="font-family:'Great Vibes',cursive;font-size:1rem;color:var(--gold);">Sweet Ending</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#fff;font-weight:600;">Firni & Desserts</div>
+        <div style="font-size:0.72rem;color:rgba(200,151,58,0.7);margin-top:4px;">PKR 60 — 100</div>
+      </div>
+    </div>
+
+    <!-- Daal -->
+    <div style="position:relative;overflow:hidden;height:300px;cursor:pointer;" class="gal-card">
+      <div class="food-img food-daal" aria-label="Daal Mash">
+      <div class="food-steam"><span class="steam-line"></span><span class="steam-line"></span><span class="steam-line"></span></div>
+      <div class="food-emoji">🥘</div>
+      <div class="food-plate"></div>
+    </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(3,2,2,0.9),transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;">
+        <div style="font-family:'Great Vibes',cursive;font-size:1rem;color:var(--gold);">Desi Comfort</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#fff;font-weight:600;">Daal Mash</div>
+        <div style="font-size:0.72rem;color:rgba(200,151,58,0.7);margin-top:4px;">PKR 250</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<style>
+.gal-card img:hover{transform:scale(1.08);filter:brightness(1) !important;}
+.gal-card::after{content:'';position:absolute;inset:0;border:1px solid transparent;transition:border-color 0.3s;pointer-events:none;}
+.gal-card:hover::after{border-color:rgba(200,151,58,0.3);}
+@media(max-width:700px){
+  #gallery > div:last-child{grid-template-columns:1fr !important;}
+  #gallery > div:last-child > div{height:220px !important;}
+}
+</style>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-gold-line"></div>
+    <div class="footer-top">
+      <div class="fb-brand">
+        <h3>Pasha's Kitchen</h3>
+        <span>Authentic Flavors Since Day One</span>
+        <p>Bringing you the finest desi food, BBQ and gourmet burgers in DHA Phase 8, Lahore — made fresh every day with passion and love.</p>
+      </div>
+      <div class="fb-col"><h4>Navigate</h4><a href="#about">About Us</a><a href="#menu">Menu</a><a href="#specials">Specials</a><a href="#order">Order Now</a></div>
+      <div class="fb-col"><h4>Contact</h4><p>📞 0320 0534 000</p><p>📍 164/1 C-Block, Phase 8</p><p>DHA Lahore</p><p>🕐 11AM — 12AM Daily</p></div>
+      <div class="fb-col"><h4>Follow Us</h4><a href="https://instagram.com/pashas_kitchen_lahore" target="_blank">Instagram</a><a href="https://wa.me/923200534000" target="_blank">WhatsApp</a></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="fcopy">© 2025 Pasha's Kitchen · DHA Phase 8, Lahore · All Rights Reserved</div>
+      <div class="fsocial">
+        <a class="fsoc" href="https://instagram.com/pashas_kitchen_lahore" target="_blank">IG</a>
+        <a class="fsoc" href="https://wa.me/923200534000" target="_blank">WA</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/923200534000?text=Hello%20Pasha's%20Kitchen!%20I%20want%20to%20order" target="_blank">🛵</a>
+
+<script>
+// PRELOADER
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    document.getElementById('preloader').classList.add('hide');
+    setTimeout(()=>{const p=document.getElementById('preloader');if(p)p.remove();},1000);
+  },2200);
+});
+
+// CURSOR
+const cur=document.getElementById('cur'),outer=document.getElementById('cur-outer'),dot=document.getElementById('cur-dot');
+let mx=0,my=0,ox=0,oy=0;
+if(!('ontouchstart' in window)){
+  document.addEventListener('mousemove',e=>{
+    mx=e.clientX;my=e.clientY;
+    cur.style.left=mx+'px';cur.style.top=my+'px';
+    dot.style.left=mx+'px';dot.style.top=my+'px';
+  });
+  (function loop(){ox+=(mx-ox)*0.1;oy+=(my-oy)*0.1;outer.style.left=ox+'px';outer.style.top=oy+'px';requestAnimationFrame(loop);})();
+  document.querySelectorAll('a,button,.mc,.spec-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{
+      cur.style.transform='translate(-50%,-50%) scale(3)';
+      outer.style.width='60px';outer.style.height='60px';
+      outer.style.borderColor='rgba(200,151,58,0.8)';
+    });
+    el.addEventListener('mouseleave',()=>{
+      cur.style.transform='translate(-50%,-50%) scale(1)';
+      outer.style.width='36px';outer.style.height='36px';
+      outer.style.borderColor='rgba(200,151,58,0.4)';
+    });
+  });
+}else{[cur,outer,dot].forEach(el=>{if(el)el.style.display='none';});document.body.style.cursor='auto';}
+
+// PARTICLES
+(function(){
+  var cvs = document.querySelector('canvas#particlesCanvas');
+  if(!cvs || typeof cvs.getContext !== 'function') return;
+  var ctx2 = cvs.getContext('2d');
+  var W2, H2, pts2=[];
+  function resize2(){W2=cvs.width=window.innerWidth;H2=cvs.height=window.innerHeight;}
+  resize2();
+  window.addEventListener('resize', resize2);
+  for(var i=0;i<60;i++){
+    pts2.push({
+      x:Math.random()*window.innerWidth,
+      y:Math.random()*window.innerHeight,
+      r:Math.random()*1.4+0.3,
+      vx:(Math.random()-.5)*0.25,
+      vy:(Math.random()-.5)*0.25,
+      a:Math.random()*0.35+0.05,
+      c:Math.random()>.5?'200,151,58':'255,220,120'
+    });
+  }
+  function drawPts2(){
+    ctx2.clearRect(0,0,W2,H2);
+    pts2.forEach(function(p){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=W2;if(p.x>W2)p.x=0;
+      if(p.y<0)p.y=H2;if(p.y>H2)p.y=0;
+      ctx2.beginPath();ctx2.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx2.fillStyle='rgba('+p.c+','+p.a+')';ctx2.fill();
+    });
+    for(var i2=0;i2<pts2.length;i2++){
+      for(var j2=i2+1;j2<pts2.length;j2++){
+        var dx=pts2[i2].x-pts2[j2].x,dy=pts2[i2].y-pts2[j2].y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<130){
+          ctx2.beginPath();ctx2.moveTo(pts2[i2].x,pts2[i2].y);ctx2.lineTo(pts2[j2].x,pts2[j2].y);
+          ctx2.strokeStyle='rgba(200,151,58,'+(0.04*(1-d/130))+')';ctx2.lineWidth=0.5;ctx2.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(drawPts2);
+  }
+  drawPts2();
+})();
+
+// PARALLAX HERO
+window.addEventListener('scroll',()=>{
+  const hero=document.getElementById('hero');
+  const scrollY=window.scrollY;
+  if(hero){
+    const content=hero.querySelector('.hero-content');
+    if(content) content.style.transform=`translateY(${scrollY*0.35}px)`;
+    const vwrap=hero.querySelector('.hero-video-wrap');
+    if(vwrap) vwrap.style.transform=`translateY(${scrollY*0.15}px)`;
+  }
+  // NAV scroll
+  const nav=document.getElementById('navbar');
+  if(nav) nav.classList.toggle('scrolled',scrollY>60);
+},{passive:true});
+
+// HAMBURGER
+const ham=document.getElementById('ham'),navL=document.getElementById('navLinks');
+if(ham)ham.addEventListener('click',()=>navL.classList.toggle('open'));
+navL.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navL.classList.remove('open')));
+
+// MENU TABS
+function showMenu(id,btn){
+  document.querySelectorAll('.menu-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.mt').forEach(t=>t.classList.remove('active'));
+  document.getElementById('menu-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// REVEAL
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+</script>
+</body>
+</html>
